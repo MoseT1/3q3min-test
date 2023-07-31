@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="answer">
+	
+	<insert id="insert" parameterType="answervo">
+		<![CDATA[
+			insert into Question values (null, #{content}, curdate(), #{questionID})
+		]]>
+	</insert>
+
+	<insert id="findAnswerByDate" parameterType="string">
+		<![CDATA[
+			select a.content, b.content from Answer a, Question b where a.questionID = b.id and a.date=#{date} and userID=b.userID
+		]]>
+	</insert>
+
+
+	<update id="updateCommentByID" parameterType="map">
+		<![CDATA[
+			update Answer set content=#{content} where id=#{id}
+		]]>
+	</update>
+
+	<select id="findQuestionAndAnswerByUserID" parameterType="long" resultType="map">
+		<![CDATA[ 
+			select q.content as question, a.content as answer
+			from question q, answer a 
+			where q.id = a.questionID and a.userID = #{userID}
+		]]>
+	</select>
+</mapper>
