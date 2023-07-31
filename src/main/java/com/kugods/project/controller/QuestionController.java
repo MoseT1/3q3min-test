@@ -3,15 +3,15 @@ package com.kugods.project.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.kugods.project.service.QuestionService;
 import com.kugods.project.vo.QuestionVo;
 
-@Controller
+@RestController
 @RequestMapping("/question")
 public class QuestionController {
 	
