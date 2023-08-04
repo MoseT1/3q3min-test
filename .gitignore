@@ -37,3 +37,7 @@
 **/.njsproj
 **/.sln
 **/.sw?
+
+## application properties
+application.yml
+application.properties
