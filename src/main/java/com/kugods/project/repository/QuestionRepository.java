@@ -16,8 +16,10 @@ public class QuestionRepository {
 	private SqlSession sqlSession;
 
 	public void insert(List<QuestionVo> voList)  throws QuestionRepositoryException{
-
-		sqlSession.insert("question.insert", voList);
+		
+		for (QuestionVo vo : voList) {
+			sqlSession.insert("question.insert", vo);
+		}
 	}
 
 	

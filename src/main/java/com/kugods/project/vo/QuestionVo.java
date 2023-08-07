@@ -6,7 +6,7 @@ public class QuestionVo {
 	private String category;
 	private String content;
 	private String date;
-	private Long userId;
+	private Long userID;
 	
 	public Long getId() {
 		return id;
@@ -38,16 +38,16 @@ public class QuestionVo {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	public Long getUserId() {
-		return userId;
+	public Long getUserID() {
+		return userID;
 	}
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setUserId(Long userID) {
+		this.userID = userID;
 	}
 	@Override
 	public String toString() {
 		return "QuestionVo [id=" + id + ", type=" + type + ", category=" + category + ", content=" + content + ", date="
-				+ date + ", userId=" + userId + "]";
+				+ date + ", userID=" + userID + "]";
 	}
 	
 }

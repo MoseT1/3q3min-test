@@ -19,10 +19,10 @@ public class QuestionController {
 	private QuestionService questionService;
 	
 	
-	
 	//AI에게 질문리스트 받아서 저장 + (바로 프론트로 보낼까?)
 	@PostMapping("/add")
-	public void insert(@RequestBody List<QuestionVo> voList) {
+	public void add(@RequestBody List<QuestionVo> voList) {
+		
 		questionService.addQuestion(voList);
 		
 		

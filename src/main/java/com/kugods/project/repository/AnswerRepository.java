@@ -26,26 +26,26 @@ public class AnswerRepository {
 	
 	
 	//date랑 userID도 필요할듯 
-	public List<AnswerVo> findAnswerByDate(String date) throws AnswerRepositoryException {
-		Map<String, Object> map = new HashMap<>();
-		map.put("date", date);
-		
+	public List<Map<String, String>> findAnswerByDate(String date) throws AnswerRepositoryException {
+//		Map<String, Object> map = new HashMap<>();
+//		map.put("date", date);
+//		
 		/**
 		 * 로그인한 유저의 아이디를 userID에 주기.
 		 */
 		//map.put("userID", userID );
-		List<AnswerVo> list = sqlSession.selectList("answer.findAnswerByDate", date);
+		List<Map<String, String>> list = sqlSession.selectList("answer.findAnswerByDate", date);
 		return list;
 	}
 	
-	// answerID, comment를 입력받아서 수정
-	public void updateCommentByID(Long id, String comment) throws AnswerRepositoryException {
+	// answerID, content를 입력받아서 수정
+	public void updateContentByID(Long id, String content) throws AnswerRepositoryException {
 		
 		Map<String, Object> map = new HashMap<>();
 		map.put("id", id);
-		map.put("comment", comment);
+		map.put("content", content);
 		
-		sqlSession.update("answer.updateCommentByID", map);
+		sqlSession.update("answer.updateContentByID", map);
 		
 	}
 	

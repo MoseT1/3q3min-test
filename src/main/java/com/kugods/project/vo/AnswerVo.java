@@ -5,7 +5,7 @@ public class AnswerVo {
 	private String content;
 	private String date;
 	private Long questionID;
-
+	
 	public Long getId() {
 		return id;
 	}
