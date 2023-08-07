@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="board">
+<mapper namespace="question">
 
 	<insert id="insert" parameterType="java.util.List">
 		<![CDATA[
-			insert into Question (id, type, category, content, date, user_id)
+			insert into question (id, type, category, content, date, userID)
 			values
-			<foreach collection="list" item="item" separator=",">
-				(null, #{item.type}, #{item.category}, #{item.content}, #{item.date}, #{item.userID})
-			</foreach>
+			(null, #{type}, #{category}, #{content}, #{date}, #{userID})
 		]]>
 	</insert>
 
